@@ -1,0 +1,6 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: 'dotnet build $(Build.SourcesDirectory)/MusicPlayer.Wasm/MusicPlayer.Wasm.csproj /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary'
+  displayName: 'Build'
