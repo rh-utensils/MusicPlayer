@@ -113,7 +113,6 @@ namespace MusicPlayer
             deferral.Complete();
         }
 
-
         /// <summary>
         ///     Configures global logging
         /// </summary>
