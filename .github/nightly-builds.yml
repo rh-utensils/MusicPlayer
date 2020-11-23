@@ -31,6 +31,7 @@ steps:
       git remote set-url origin https://hampoelz:$(git-token)@github.com/rh-utensils/MusicPlayer.Wasm.Nightly.git
       echo "Download external files ..."
       wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer/dev/LICENSE"
+      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer/rewrite/MusicPlayer.Wasm/workbox.js"
       wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm.Nightly/master/CNAME"
       wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm.Nightly/master/manifest.json"
       echo "Commit new files ..."
