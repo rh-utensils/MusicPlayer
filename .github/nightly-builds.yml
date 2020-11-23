@@ -9,7 +9,7 @@ schedules:
   displayName: Daily midnight build
   branches:
     include:
-    - VSCode/WinUI-Update
+    - dev
 
 steps:
 - checkout: self
@@ -29,11 +29,9 @@ steps:
       git remote add origin https://github.com/rh-utensils/MusicPlayer.Wasm.Nightly.git
       git remote set-url origin https://hampoelz:$(git-token)@github.com/rh-utensils/MusicPlayer.Wasm.Nightly.git
       echo "Download external files ..."
-      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm/master/LICENSE"
+      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer/dev/LICENSE"
       wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm.Nightly/master/CNAME"
       wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm.Nightly/master/manifest.json"
-      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm.Nightly/master/.htaccess"
-      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm.Nightly/master/workbox.js"
       echo "Commit new files ..."
       git add *
       git config user.email "bot@hampoelz.net"
