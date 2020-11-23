@@ -1,0 +1,38 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+trigger:
+  branches:
+    include:
+    - master
+pr: none
+
+steps:
+- checkout: self
+  persistCredentials: true
+  clean: true
+- script: 'dotnet publish $(Build.SourcesDirectory)/MusicPlayer.Wasm/MusicPlayer.Wasm.csproj /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary -c Release'
+  displayName: 'Build'
+- script: |
+      echo "Copy built files ..."
+      mkdir $(Build.SourcesDirectory)/MusicPlayer.Wasm.Release
+      cp -r $(Build.SourcesDirectory)/MusicPlayer.Wasm/bin/Release/netstandard2.0/publish/* $(Build.SourcesDirectory)/MusicPlayer.Wasm.Release
+      cd $(Build.SourcesDirectory)/MusicPlayer.Wasm.Release
+
+      echo "Initialize git ..."
+      git --version
+      git init
+      git remote add origin https://github.com/rh-utensils/MusicPlayer.Wasm.git
+      git remote set-url origin https://hampoelz:$(git-token)@github.com/rh-utensils/MusicPlayer.Wasm.git
+      echo "Download external files ..."
+      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer/master/LICENSE"
+      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm/master/CNAME"
+      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm/master/manifest.json"
+      echo "Commit new files ..."
+      git add *
+      git config user.email "bot@hampoelz.net"
+      git config user.name "HampisBot"
+      git commit -m "[DevOps Pipeline] Automated release build ($(build.buildNumber)) from $(date +"%D")"
+      echo "Push files to repository ..."
+      git push -f origin master
+  displayName: 'Publish'
