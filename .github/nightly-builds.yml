@@ -10,6 +10,7 @@ schedules:
   branches:
     include:
     - dev
+    - rewrite
 
 steps:
 - checkout: self
