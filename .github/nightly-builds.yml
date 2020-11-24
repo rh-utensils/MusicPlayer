@@ -1,0 +1,43 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+trigger: none
+pr: none
+
+schedules:
+- cron: "0 0 * * *"
+  displayName: Daily midnight build
+  branches:
+    include:
+    - dev
+
+steps:
+- checkout: self
+  persistCredentials: true
+  clean: true
+- script: 'dotnet publish $(Build.SourcesDirectory)/MusicPlayer.Wasm/MusicPlayer.Wasm.csproj /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary -c Release'
+  displayName: 'Build'
+- script: |
+      echo "Copy built files ..."
+      mkdir $(Build.SourcesDirectory)/MusicPlayer.Wasm.Nightly
+      cp -r $(Build.SourcesDirectory)/MusicPlayer.Wasm/bin/Release/netstandard2.0/publish/* $(Build.SourcesDirectory)/MusicPlayer.Wasm.Nightly
+      cd $(Build.SourcesDirectory)/MusicPlayer.Wasm.Nightly
+
+      echo "Initialize git ..."
+      git --version
+      git init
+      git remote add origin https://github.com/rh-utensils/MusicPlayer.Wasm.Nightly.git
+      git remote set-url origin https://hampoelz:$(git-token)@github.com/rh-utensils/MusicPlayer.Wasm.Nightly.git
+      echo "Download external files ..."
+      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer/dev/LICENSE"
+      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer/dev/MusicPlayer.Wasm/workbox.js"
+      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm.Nightly/master/CNAME"
+      wget "https://raw.githubusercontent.com/rh-utensils/MusicPlayer.Wasm.Nightly/master/manifest.json"
+      echo "Commit new files ..."
+      git add *
+      git config user.email "bot@hampoelz.net"
+      git config user.name "HampisBot"
+      git commit -m "[DevOps Pipeline] Automated nightly build ($(build.buildNumber)) from $(date +"%D")"
+      echo "Push files to repository ..."
+      git push -f origin master
+  displayName: 'Publish'

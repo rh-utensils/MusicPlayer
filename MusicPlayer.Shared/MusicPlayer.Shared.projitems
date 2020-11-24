@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6279c845-92f8-4333-ab99-3d213163593c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MusicPlayer.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-icon-120.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-icon-152.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-icon-167.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-icon-180.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-1125-2436.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-1136-640.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-1242-2208.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-1242-2688.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-1334-750.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-1536-2048.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-1668-2224.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-1668-2388.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-1792-828.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-2048-1536.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-2048-2732.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-2208-1242.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-2224-1668.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-2388-1668.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-2436-1125.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-2688-1242.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-2732-2048.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-640-1136.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-750-1334.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\apple-splash-828-1792.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\favicon-196.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\logo.svg"/>
+    <None Include="$(MSBuildThisFileDirectory)Assets\cover.svg"/>
+    <None Include="$(MSBuildThisFileDirectory)Assets\manifest-icon-192.png"/>
+    <None Include="$(MSBuildThisFileDirectory)Assets\manifest-icon-512.png"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Strings\SplashScreen.js"/>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\de\Resources.resw"/>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw"/>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="icon" type="image/png" sizes="196x196" href="./Assets/favicon-196.png">
+
+      <link rel="manifest" href="manifest.json" />
+
+      <link rel="apple-touch-icon" sizes="180x180" href="./Assets/apple-icon-180.png">
+      <link rel="apple-touch-icon" sizes="167x167" href="./Assets/apple-icon-167.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="./Assets/apple-icon-152.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="./Assets/apple-icon-120.png">
+
+      <meta name="apple-mobile-web-app-capable" content="yes">
+
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-2048-2732.png"
+            media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-2732-2048.png"
+            media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-1668-2388.png"
+            media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-2388-1668.png"
+            media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-1668-2224.png"
+            media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-2224-1668.png"
+            media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-1536-2048.png"
+            media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-2048-1536.png"
+            media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-1242-2688.png"
+            media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-2688-1242.png"
+            media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-1125-2436.png"
+            media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-2436-1125.png"
+            media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-828-1792.png"
+            media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-1792-828.png"
+            media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-1242-2208.png"
+            media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-2208-1242.png"
+            media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-750-1334.png"
+            media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-1334-750.png"
+            media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-640-1136.png"
+            media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+      <link rel="apple-touch-startup-image" href="./Assets/apple-splash-1136-640.png"
+            media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+
+      <script async type="text/javascript">
+            console.log("RH_MUSIC: Initializing error handling");
+
+            window.addEventListener('error', event => handleError(event));
+            window.addEventListener('unhandledrejection', event => handleError(event));
+
+            function handleError(event) {
+                  var reloadCounter = getCookie("reloadCounter");
+
+                  if (reloadCounter >= 5) {
+                        window.addEventListener('DOMContentLoaded', () => displayErrorAlert());
+                        displayErrorAlert();
+
+                        function displayErrorAlert() {
+                              var elements = document.getElementsByClassName("box");
+                              for (var i = 0; i < elements.length; ++i) elements[i].style.display = "none";
+
+                              document.getElementById("errorbox-error").style.display = "block";
+                              setCookie("reloadCounter", "", 0);
+                        }
+                  } else {
+                        console.warn("caught an error in: '" + event.filename + "', reason: '" + event.message + "'");
+                        console.warn("prevent page from further loading, reload page in 2 seconds ...");
+
+                        if (reloadCounter == "") setCookie("reloadCounter", "1", 30);
+                        else setCookie("reloadCounter", (parseInt(reloadCounter) + 1).toString(), 30);
+
+                        setTimeout(() => window.location.reload(), 2000);
+                  }
+
+                  window.stop();
+            }
+
+            function setCookie(cName, cValue, exMinutes) {
+                  var d = new Date();
+                  d.setMinutes(d.getMinutes() + exMinutes);
+                  var expires = "expires=" + d.toUTCString();
+                  document.cookie = cName + "=" + cValue + ";" + expires + ";path=/";
+            }
+
+            function getCookie(cName) {
+                  var name = cName + "=";
+                  var decodedCookie = decodeURIComponent(document.cookie);
+                  var ca = decodedCookie.split(';');
+                  for (var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                              c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                              return c.substring(name.length, c.length);
+                        }
+                  }
+                  return "";
+            }
+      </script>
+
+      <script>
+            if ('serviceWorker' in navigator) {
+                  window.addEventListener('load', () => {
+                        navigator.serviceWorker.register('./workbox.js', { scope: './' })
+                              .then(() => console.log('SERVICE_WORKER: Registered'))
+                              .catch(error => console.warn('SERVICE_WORKER: Registration failed: ', error));
+                  });
+            }
+      </script>
+
+      <script defer type="text/javascript" src="./require.js"></script>
+      <script type="text/javascript" src="./mono-config.js"></script>
+      <script type="text/javascript" src="./uno-config.js"></script>
+      <script type="text/javascript" src="./uno-bootstrap.js"></script>
+      <script async type="text/javascript" src="./dotnet.js"></script>
+      $(ADDITIONAL_CSS)
+      $(ADDITIONAL_HEAD)
+      <script type="text/javascript" src="./Strings/SplashScreen.js"></script>
+</head>
+
+<body>
+      <style>
+            .uno-loader .center {
+                  left: 50%;
+                  position: absolute;
+
+                  text-align: center;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+            }
+
+            .uno-loader .center-horizontal {
+                  left: 50%;
+
+                  position: absolute;
+                  text-align: center;
+                  transform: translate(-50%);
+            }
+
+            .uno-loader h1 {
+                  color: #212121 !important;
+                  font-family: "Roboto";
+
+                  margin-top: 8em;
+
+                  top: 50%;
+                  width: 300px;
+            }
+
+            .uno-loader p {
+                  color: #212121 !important;
+                  font-family: "Roboto";
+            }
+
+            .uno-loader>div.box {
+                  margin-top: 3em;
+
+                  width: 40%;
+                  max-width: 500px;
+                  min-width: 250px;
+
+                  border-width: 2px;
+                  border-style: solid;
+                  border-color: #212121;
+                  border-radius: 5px;
+
+                  padding-left: 1em;
+                  padding-right: 1em;
+            }
+
+            .uno-loader>div.box.info {
+                  border-color: #33B5E5;
+            }
+
+            .uno-loader>div.box.success {
+                  border-color: #00C851;
+            }
+
+            .uno-loader>div.box.warn {
+                  border-color: #FFBB33;
+            }
+
+            .uno-loader>div.box.error {
+                  border-color: #FF4444;
+            }
+
+            .uno-loader progress {
+                  background-color: #212121;
+
+                  border-radius: 13px;
+
+                  height: 15px;
+                  margin-top: 12em;
+                  min-width: 300px;
+
+                  padding: 3px;
+                  top: 50%;
+
+                  width: 40%;
+            }
+
+            .uno-loader progress::-moz-progress-bar {
+                  /* Firefox */
+                  background-color: #1565C0;
+                  border-radius: 10px;
+            }
+
+
+            .uno-loader progress::-webkit-progress-bar {
+                  /* Chrome & Safari */
+                  background-color: #212121;
+                  border-radius: 10px;
+            }
+
+
+            .uno-loader progress::-webkit-progress-value {
+                  /* Chrome & Safari */
+                  background-color: #1565C0;
+                  border-radius: 10px;
+            }
+
+            .uno-loader[loading-position='top'] progress {
+                  color: #1565C0;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                  .uno-loader {
+                        background-color: #212121 !important;
+                  }
+
+                  .uno-loader h1,
+                  .uno-loader p {
+                        color: white !important;
+                  }
+
+                  .uno-loader>div.box {
+                        border-color: #212121;
+                  }
+
+                  .uno-loader>div.box.info {
+                        border-color: #0099CC;
+                  }
+
+                  .uno-loader>div.box.success {
+                        border-color: #007E33;
+                  }
+
+                  .uno-loader>div.box.warn {
+                        border-color: #FF8800;
+                  }
+
+                  .uno-loader>div.box.error {
+                        border-color: #CC0000;
+                  }
+
+                  .uno-loader progress {
+                        background-color: white;
+                  }
+
+                  .uno-loader progress::-webkit-progress-bar {
+                        background-color: white;
+                  }
+            }
+
+            @media only screen and (max-height: 650px) {
+                  .uno-loader>div.box {
+                        margin-top: 1em;
+                  }
+
+                  .uno-loader progress {
+                        visibility: hidden;
+                  }
+
+                  .uno-loader h1 {
+                        margin-top: 6em;
+                  }
+            }
+
+            @media only screen and (max-height: 550px) {
+                  .uno-loader h1,
+                  .uno-loader>div.box {
+                        visibility: hidden;
+                  }
+            }
+      </style>
+      <div id="uno-body" class="container-fluid uno-body">
+            <div class="uno-loader" loading-position="bottom" loading-alert="none">
+                  <div id="infobox-offline" class="box warn center-horizontal" style="display: none;">
+                        <p id="alert-offline"></p>
+                  </div>
+                  <div id="errorbox-error" class="box error center-horizontal" style="display: none;">
+                        <p id="alert-error"></p>
+                  </div>
+                  <img class="center" height="300" width="300"
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTA1MCIgaGVpZ2h0PSIxMDUwIg0KICAgICBmaWxsPSIjZmZmZmZmIiB2aWV3Qm94PSIwIDAgMTI5NSAxMjk1IiB4bWxuczp2PSJodHRwczovL3ZlY3RhLmlvL25hbm8iPg0KICA8ZGVmcz4NCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IkEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4NCiAgICAgIDxzdG9wIG9mZnNldD0iMCIgLz48c3RvcCBzdG9wLW9wYWNpdHk9IjAiIG9mZnNldD0iMSIgLz4NCiAgICA8L2xpbmVhckdyYWRpZW50Pg0KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iQiIgeDE9IjcwMCIgeDI9Ijc3Ny43MDkiIHkxPSIzODAuMTgyIiB5Mj0iMzAyLjQ3NCIgeGxpbms6aHJlZj0iI0EiIC8+DQogICAgPGxpbmVhckdyYWRpZW50IGlkPSJDIiB4MT0iOC4wNjMiIHgyPSI5LjM1OSIgeTE9IjQuNjE5IiB5Mj0iNS45MTYiIHhsaW5rOmhyZWY9IiNBIiAvPg0KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iRCIgeDE9IjEzLjMxMiIgeDI9IjExLjU4MyIgeTE9IjE0LjAxOCIgeTI9IjEyLjI4OSIgeGxpbms6aHJlZj0iI0EiIC8+DQogICAgPGxpbmVhckdyYWRpZW50IGlkPSJFIiB4MT0iOTE4LjM5IiB4Mj0iMTAxMC44NTUiIHkxPSIxOTguODk3IiB5Mj0iMjkxLjMyNyIgeGxpbms6aHJlZj0iI0EiIC8+DQogICAgPGZpbHRlciBpZD0iRiIgeD0iLS4xMjYiIHk9Ii0uMDc4IiB3aWR0aD0iMS4yNTIiIGhlaWdodD0iMS4xNTUiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+DQogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIuMTIxIiAvPg0KICAgIDwvZmlsdGVyPg0KICAgIDxmaWx0ZXIgeD0iLS4wNzciIHk9Ii0uMDQ5IiB3aWR0aD0iMS4xNTQiIGhlaWdodD0iMS4wOTgiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+DQogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyNC4wMjgiIC8+DQogICAgPC9maWx0ZXI+DQogICAgPHBhdGggaWQ9IkgiDQogICAgICAgICAgZD0iTTEwODggMTcxTDg3OC44MiAzODAuMThoOTEuNjcyYzc0LjM4NyAwIDEzNS4yNC02My4zMzcgMTM1LjI0LTE0MC43NCAwLTI0LjkwMy02LjcwNi00OC4wOTUtMTcuNzMtNjguNDQ0eiIgLz4NCiAgICA8cGF0aCBpZD0iSSINCiAgICAgICAgICBkPSJNODM1LjI0IDk4LjcwNWMtNzQuMzg3IDAtMTM1LjI0IDYzLjMzNy0xMzUuMjQgMTQwLjc0djUuNDk4bDEzNS4yNCAxMzUuMjRoNDMuNTY4bDIwOS4xOC0yMDkuMThjLTIzLjI0LTQyLjg5Ni02Ny4wNTgtNzIuMjkzLTExNy41LTcyLjI5M3oiIC8+DQogIDwvZGVmcz4NCiAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoLjkyNjkyIDAgMCAuOTI1IC0xLjM2MjUgLTI5LjYzNikiPg0KICAgIDxwYXRoDQogICAgICBkPSJNNTY1Ljg2IDgwMi40Yy0yOS4zMjUtLjE2NC01OS43OTMgNC43MzQtOTAuOTg1IDE2LjA4LTkwLjYxNiAzMy43NzUtMTYwLjM4IDExNy41NC0xNzYuNiAyMTYuMDUtMzEuMTA3IDE5Mi44IDEyNS44NiAzNTcuNSAzMTAuNDcgMzI3LjI0IDEzMi41NC0yMS44MTMgMjI2LjUtMTQ4LjQ2IDIyNi41LTI4OC40OHYtOTcuMDMybC0xMzUuMjQtMTM1LjI0Yy0zOS43My0yMy43NDgtODUuMjY1LTM4LjM0LTEzNC4xNC0zOC42MnoiDQogICAgICBmaWxsPSIjMTk3NmQyIiAvPg0KICAgIDxwYXRoIGQ9Ik04MzUuMjQgNDIzLjc1TDcwMCA1NTlWODQxbDEzNS4yNCAxMzUuMjR6IiBmaWxsPSIjMzAzZjlmIiAvPg0KICAgIDxwYXRoIHRyYW5zZm9ybT0ibWF0cml4KDcwLjM2OSAwIDAgNzAuMzY5IDEzMi42NSA5OC43MDUpIg0KICAgICAgICAgIGQ9Ik03Ljk0MyAxMC42NDJjLS4zOTYuNDQ3LS41NDYuODg2LS41NDcgMS40NzcgMCAxLjI1NyAxLjAyIDIuMjc1IDIuMjc1IDIuMjc1LjEtLjAwMS0uMDAzLS4wMy4wMDgtLjA5Ni0xLjg4My0uNS0yLjU2Ni0yLjAyLTEuNjc4LTMuNjIyeiINCiAgICAgICAgICBmaWxsPSIjMDAwIiBmaWx0ZXI9InVybCgjRikiIC8+DQogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoNTIuNzc3IDAgMCA1Mi43NzcgMTMyLjY1IDk4LjcwNSkiPg0KICAgICAgPHBhdGggZD0iTTEwLjc1IDE0LjAxOGwyLjU2My0yLjU2MlY2LjExMkwxMC43NSAzLjU1eiIgZmlsbD0idXJsKCNEKSIgLz4NCiAgICAgIDxwYXRoIHRyYW5zZm9ybT0ic2NhbGUoMS4zMzMzKSIgZD0iTTkuOTg0IDQuNjJMOC4wNjMgNi41NHY0LjAwOGwxLjkyMiAxLjkyMnoiIGZpbGw9InVybCgjQykiIC8+DQogICAgPC9nPg0KICAgIDxwYXRoDQogICAgICBkPSJNODM1LjIyMyA3MDMuMjlsLTEzNi45MzYgMTM2Ljk0Yy0yOC45MTYgMjkuODI4LTQ1LjExIDY5LjcyNS00NS4xNjYgMTExLjI2OC4wMjIgODguNDIgNzEuNjk2IDE2MC4wOTQgMTYwLjExNiAxNjAuMTE2IDYuMzQ0LS4wOCAxMi42NzctLjU0IDE4Ljk2Ni0xLjM3MmwuODMtLjA5YzEuNDA4LTExLjg3NCAyLjE1NS0yMy45MDYgMi4xODctMzYuMDQzaC0uMDA1bC4wMTMtLjg0Vjc5My4wMzZ6Ig0KICAgICAgZmlsbD0iIzY0YjVmNiIgLz4NCiAgICA8dXNlIHhsaW5rOmhyZWY9IiNIIiBmaWxsPSIjMGQ0N2ExIiAvPjx1c2UgeGxpbms6aHJlZj0iI0giIGZpbGw9InVybCgjRSkiIC8+DQogICAgPHVzZSB4bGluazpocmVmPSIjSSIgZmlsbD0iIzIxOTZmMyIgLz48dXNlIHhsaW5rOmhyZWY9IiNJIiBmaWxsPSJ1cmwoI0IpIiAvPg0KICAgIDxwYXRoIGQ9Ik03MDAgMjQ0Ljk0VjU1OWwxMzUuMjQtMTM1LjI0di00My41Njh6IiBmaWxsPSIjNjRiNWY2IiAvPg0KICA8L2c+DQo8L3N2Zz4=">
+                  <progress class="center-horizontal"></progress>
+                  <h1 id="loading" class="center-horizontal"></h1>
+
+                  <span class="alert"></span>
+            </div>
+      </div>
+      <script>
+            if (!navigator.onLine) document.getElementById("infobox-offline").style.display = "block";
+
+            document.getElementById('alert-offline').innerHTML = lang.offline;
+            document.getElementById('alert-error').innerHTML = lang.error;
+            document.getElementById('loading').innerHTML = lang.loading;
+      </script>
+      <noscript>
+            <p>This application requires Javascript and WebAssembly to be enabled.</p>
+      </noscript>
+</body>
+
+</html>

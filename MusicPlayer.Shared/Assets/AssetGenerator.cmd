@@ -1,0 +1,1 @@
+pwa-asset-generator logo.svg .\ --background transparent --opaque false --scrape true --path-override ./Assets --padding 0px --type png --quality 100 --favicon --maskable --dark-mode false --log
