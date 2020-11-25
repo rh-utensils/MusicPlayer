@@ -244,6 +244,7 @@
 
             .uno-loader progress {
                   background-color: #212121;
+                  color: #1565C0;
 
                   border-radius: 13px;
 
@@ -258,20 +259,14 @@
             }
 
             .uno-loader progress::-webkit-progress-bar {
-                  /* Chrome & Safari */
                   background-color: #212121;
-                  border-radius: 10px;
+                  border-radius: 13px;
             }
 
             .uno-loader progress::-moz-progress-bar,
             .uno-loader progress::-webkit-progress-value {
-                  /* Chrome & Safari */
                   background-color: #1565C0;
                   border-radius: 10px;
-            }
-
-            .uno-loader[loading-position='top'] progress {
-                  color: #1565C0;
             }
 
             .uno-splash {
@@ -341,7 +336,7 @@
                   }
 
                   .uno-loader progress {
-                        visibility: hidden;
+                        visibility: collapse;
                   }
 
                   .uno-loader h1 {
