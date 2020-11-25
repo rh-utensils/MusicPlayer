@@ -72,9 +72,9 @@
 
                         function displayErrorAlert() {
                               var elements = document.getElementsByClassName("box");
-                              for (var i = 0; i < elements.length; ++i) elements[i].style.display = "none";
+                              for (var i = 0; i < elements.length; ++i) elements[i].style.visibility = "collapse";
 
-                              document.getElementById("errorbox-error").style.display = "block";
+                              document.getElementById("errorbox-error").style.visibility = "visible";
                         }
 
                         setCookie("reloadCounter", "", 0);
@@ -114,7 +114,7 @@
                   return "";
             }
       </script>
-
+      
       <script>
             if ('serviceWorker' in navigator) {
                   window.addEventListener('load', () => {
@@ -172,7 +172,7 @@
             .uno-loader>div.box {
                   margin-top: 3em;
 
-                  width: 40%;
+                  width: 50%;
                   max-width: 500px;
                   min-width: 250px;
 
@@ -181,24 +181,65 @@
                   border-color: #212121;
                   border-radius: 5px;
 
-                  padding-left: 1em;
-                  padding-right: 1em;
+                  padding: 1em;
+
+                  display: table;
+            }
+
+            .uno-loader>div.box>svg {
+                  margin-right: 1em;
+
+                  width: 50px;
+                  height: auto;
+
+                  fill: #222222;
+
+                  display: table-cell;
+            }
+
+            .uno-loader>div.box>p {
+                  margin: auto;
+
+                  text-align: center;
+                  vertical-align: middle;
+
+                  display: table-cell;
             }
 
             .uno-loader>div.box.info {
                   border-color: #33B5E5;
             }
 
+            .uno-loader>div.box.info>svg path {
+                  fill: #33B5E5;
+                  d: path('M12.0000002,1.99896738 C17.523704,1.99896738 22.0015507,6.47681407 22.0015507,12.0005179 C22.0015507,17.5242217 17.523704,22.0020684 12.0000002,22.0020684 C6.47629639,22.0020684 1.99844971,17.5242217 1.99844971,12.0005179 C1.99844971,6.47681407 6.47629639,1.99896738 12.0000002,1.99896738 Z M12.0000002,3.49896738 C7.30472352,3.49896738 3.49844971,7.30524119 3.49844971,12.0005179 C3.49844971,16.6957946 7.30472352,20.5020684 12.0000002,20.5020684 C16.6952769,20.5020684 20.5015507,16.6957946 20.5015507,12.0005179 C20.5015507,7.30524119 16.6952769,3.49896738 12.0000002,3.49896738 Z M11.9963566,10.4995494 C12.3760523,10.4993013 12.6900321,10.7812497 12.7399342,11.1472927 L12.7468472,11.2490588 L12.750448,16.7506528 C12.7507187,17.1648663 12.4151521,17.5008724 12.0009386,17.5011438 C11.6212429,17.5013919 11.3072631,17.2194435 11.2573612,16.8534005 L11.2504479,16.7516344 L11.2468472,11.2500404 C11.2465765,10.8358269 11.5821431,10.4998208 11.9963566,10.4995494 Z M12.0004478,7.00178515 C12.5519939,7.00178515 12.9991104,7.44890164 12.9991104,8.00044779 C12.9991104,8.55199393 12.5519939,8.99911042 12.0004478,8.99911042 C11.4489016,8.99911042 11.0017852,8.55199393 11.0017852,8.00044779 C11.0017852,7.44890164 11.4489016,7.00178515 12.0004478,7.00178515 Z');
+            }
+
             .uno-loader>div.box.success {
                   border-color: #00C851;
+            }
+
+            .uno-loader>div.box.success>svg path {
+                  fill: #00C851;
+                  d: path('M12,2 C17.5228475,2 22,6.4771525 22,12 C22,17.5228475 17.5228475,22 12,22 C6.4771525,22 2,17.5228475 2,12 C2,6.4771525 6.4771525,2 12,2 Z M12,3.5 C7.30557963,3.5 3.5,7.30557963 3.5,12 C3.5,16.6944204 7.30557963,20.5 12,20.5 C16.6944204,20.5 20.5,16.6944204 20.5,12 C20.5,7.30557963 16.6944204,3.5 12,3.5 Z M10.75,13.4393398 L15.2196699,8.96966991 C15.5125631,8.6767767 15.9874369,8.6767767 16.2803301,8.96966991 C16.5465966,9.23593648 16.5708027,9.65260016 16.3529482,9.94621165 L16.2803301,10.0303301 L11.2803301,15.0303301 C11.0140635,15.2965966 10.5973998,15.3208027 10.3037883,15.1029482 L10.2196699,15.0303301 L7.71966991,12.5303301 C7.4267767,12.2374369 7.4267767,11.7625631 7.71966991,11.4696699 C7.98593648,11.2034034 8.40260016,11.1791973 8.69621165,11.3970518 L8.78033009,11.4696699 L10.75,13.4393398 L15.2196699,8.96966991 L10.75,13.4393398 Z');
             }
 
             .uno-loader>div.box.warn {
                   border-color: #FFBB33;
             }
 
+            .uno-loader>div.box.warn>svg path {
+                  fill: #FFBB33;
+                  d: path('M10.9093922,2.78216375 C11.9491636,2.20625071 13.2471955,2.54089334 13.8850247,3.52240345 L13.9678229,3.66023048 L21.7267791,17.6684928 C21.9115773,18.0021332 22.0085303,18.3772743 22.0085303,18.7586748 C22.0085303,19.9495388 21.0833687,20.9243197 19.9125791,21.003484 L19.7585303,21.0086748 L4.24277801,21.0086748 C3.86146742,21.0086748 3.48641186,20.9117674 3.15282824,20.7270522 C2.11298886,20.1512618 1.7079483,18.8734454 2.20150311,17.8120352 L2.27440063,17.668725 L10.0311968,3.66046274 C10.2357246,3.291099 10.5400526,2.98673515 10.9093922,2.78216375 Z M20.4146132,18.3952808 L12.6556571,4.3870185 C12.4549601,4.02467391 11.9985248,3.89363262 11.6361802,4.09432959 C11.5438453,4.14547244 11.4637001,4.21532637 11.4006367,4.29899869 L11.3434484,4.38709592 L3.58665221,18.3953582 C3.385998,18.7577265 3.51709315,19.2141464 3.87946142,19.4148006 C3.96285732,19.4609794 4.05402922,19.4906942 4.14802472,19.5026655 L4.24277801,19.5086748 L19.7585303,19.5086748 C20.1727439,19.5086748 20.5085303,19.1728883 20.5085303,18.7586748 C20.5085303,18.6633247 20.4903516,18.5691482 20.455275,18.4811011 L20.4146132,18.3952808 L12.6556571,4.3870185 L20.4146132,18.3952808 Z M12.0004478,16.0017852 C12.5519939,16.0017852 12.9991104,16.4489016 12.9991104,17.0004478 C12.9991104,17.5519939 12.5519939,17.9991104 12.0004478,17.9991104 C11.4489016,17.9991104 11.0017852,17.5519939 11.0017852,17.0004478 C11.0017852,16.4489016 11.4489016,16.0017852 12.0004478,16.0017852 Z M11.9962476,8.49954934 C12.3759432,8.49924613 12.689964,8.78114897 12.7399193,9.14718469 L12.7468472,9.24894974 L12.750448,13.7505438 C12.7507788,14.1647572 12.4152611,14.5008121 12.0010476,14.5011439 C11.621352,14.5014471 11.3073312,14.2195442 11.257376,13.8535085 L11.250448,13.7517435 L11.2468472,9.25014944 C11.2465164,8.83593601 11.5820341,8.49988112 11.9962476,8.49954934 Z');
+            }
+
             .uno-loader>div.box.error {
                   border-color: #FF4444;
+            }
+
+            .uno-loader>div.box.error>svg path {
+                  fill: #FF4444;
+                  d: path('M12,2 C17.523,2 22,6.478 22,12 C22,17.522 17.523,22 12,22 C6.477,22 2,17.522 2,12 C2,6.478 6.477,2 12,2 Z M12,3.667 C7.405,3.667 3.667,7.405 3.667,12 C3.667,16.595 7.405,20.333 12,20.333 C16.595,20.333 20.333,16.595 20.333,12 C20.333,7.405 16.595,3.667 12,3.667 Z M11.9986626,14.5022358 C12.5502088,14.5022358 12.9973253,14.9493523 12.9973253,15.5008984 C12.9973253,16.0524446 12.5502088,16.4995611 11.9986626,16.4995611 C11.4471165,16.4995611 11,16.0524446 11,15.5008984 C11,14.9493523 11.4471165,14.5022358 11.9986626,14.5022358 Z M11.9944624,7 C12.3741581,6.99969679 12.6881788,7.28159963 12.7381342,7.64763535 L12.745062,7.7494004 L12.7486629,12.2509944 C12.7489937,12.6652079 12.4134759,13.0012627 11.9992625,13.0015945 C11.6195668,13.0018977 11.3055461,12.7199949 11.2555909,12.3539592 L11.2486629,12.2521941 L11.245062,7.7506001 C11.2447312,7.33638667 11.580249,7.00033178 11.9944624,7 Z');
             }
 
             .uno-loader progress {
@@ -252,20 +293,40 @@
                         border-color: white;
                   }
 
+                  .uno-loader>div.box>svg path {
+                        fill: white;
+                  }
+
                   .uno-loader>div.box.info {
                         border-color: #0099CC;
+                  }
+
+                  .uno-loader>div.box.info>svg path {
+                        fill: #0099CC;
                   }
 
                   .uno-loader>div.box.success {
                         border-color: #007E33;
                   }
 
+                  .uno-loader>div.box.success>svg path {
+                        fill: #007E33;
+                  }
+
                   .uno-loader>div.box.warn {
                         border-color: #FF8800;
                   }
 
+                  .uno-loader>div.box.warn>svg path {
+                        fill: #FF8800;
+                  }
+
                   .uno-loader>div.box.error {
                         border-color: #CC0000;
+                  }
+
+                  .uno-loader>div.box.error>svg path {
+                        fill: #CC0000;
                   }
 
                   .uno-loader progress,
@@ -289,19 +350,30 @@
             }
 
             @media only screen and (max-height: 550px) {
-
                   .uno-loader h1,
                   .uno-loader>div.box {
-                        visibility: hidden;
+                        visibility: collapse !important;
+                  }
+            }
+
+            @media only screen and (max-width: 700px) {
+                  .uno-loader>div.box.error>svg {
+                        display: none;
                   }
             }
       </style>
       <div id="uno-body" class="container-fluid uno-body">
             <div class="uno-loader" loading-position="bottom" loading-alert="none">
-                  <div id="infobox-offline" class="box info center-horizontal" style="display: none;">
+                  <div id="infobox-offline" class="box info center-horizontal" style="visibility: collapse;">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path />
+                        </svg>
                         <p id="alert-offline"></p>
                   </div>
-                  <div id="errorbox-error" class="box error center-horizontal" style="display: none;">
+                  <div id="errorbox-error" class="box error center-horizontal" style="visibility: collapse;">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path />
+                        </svg>
                         <p id="alert-error"></p>
                   </div>
                   <img class="uno-splash center"
@@ -313,7 +385,7 @@
             </div>
       </div>
       <script>
-            if (!navigator.onLine) document.getElementById("infobox-offline").style.display = "block";
+            if (!navigator.onLine) document.getElementById("infobox-offline").style.visibility = "visible";
 
             document.getElementById('alert-offline').innerHTML = lang.offline;
             document.getElementById('alert-error').innerHTML = lang.error;
@@ -325,7 +397,7 @@
 
                         .uno-loader h1,
                         .uno-loader img {
-                              visibility: hidden;
+                              visibility: collapse;
                         }
 
                         .uno-loader>div.box {
@@ -336,6 +408,9 @@
             <div class="container-fluid uno-body">
                   <div class="uno-loader">
                         <div class="box error center-horizontal">
+                              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path />
+                              </svg>
                               <p>JavaScript is disabled! To use the MusicPlayer, you have to
                                     enable JavaScript in your browser.</p>
                         </div>
