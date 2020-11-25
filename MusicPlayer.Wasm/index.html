@@ -294,6 +294,19 @@
                   border-radius: 10px;
             }
       
+            .uno-loader[loading-alert] .alert {
+                  color: #212121;
+                  background: transparent;
+            }
+      
+            .uno-loader[loading-alert='warning'] .alert:after {
+                  color: #FFBB33;
+            }
+      
+            .uno-loader[loading-alert='error'] .alert:after {
+                  color: #FF4444;
+            }
+      
             .uno-splash {
                   height: 300px;
                   width: 300px;
@@ -305,7 +318,8 @@
                   }
       
                   .uno-loader h1,
-                  .uno-loader p {
+                  .uno-loader p,
+                  .uno-loader[loading-alert] .alert {
                         color: white;
                   }
       
@@ -352,6 +366,14 @@
                   .uno-loader progress,
                   .uno-loader progress::-webkit-progress-bar {
                         background-color: white;
+                  }
+      
+                  .uno-loader[loading-alert='warning'] .alert:after {
+                        color: #FF8800;
+                  }
+      
+                  .uno-loader[loading-alert='error'] .alert:after {
+                        color: #CC0000;
                   }
             }
       
