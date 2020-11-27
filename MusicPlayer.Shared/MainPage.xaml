@@ -9,6 +9,6 @@
       SizeChanged="MainPage_OnSizeChanged">
 
     <Grid Background="{ThemeResource SystemChromeLowColor}">
-        
+        <TextBlock x:Uid="Info" Margin="20" FontSize="30" TextWrapping="Wrap" />
     </Grid>
 </Page>

@@ -39,4 +39,8 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
+	<data name="Info.Text" xml:space="preserve">
+		<value>Der Musik-Player wird derzeit überarbeitet, Updates folgen in Kürze ...</value>
+		<comment>Info Nachricht</comment>
+	</data>
 </root>

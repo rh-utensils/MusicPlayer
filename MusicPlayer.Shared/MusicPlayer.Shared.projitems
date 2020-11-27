@@ -56,8 +56,8 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\manifest-icon-512.png"/>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Strings\SplashScreen.js"/>
-    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\de\Resources.resw"/>
-    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw"/>
+    <Content Include="$(MSBuildThisFileDirectory)Languages\SplashScreen.js"/>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Languages\de\Resources.resw"/>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Languages\en\Resources.resw"/>
   </ItemGroup>
 </Project>
