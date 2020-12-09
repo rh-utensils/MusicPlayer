@@ -7,8 +7,8 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.Extensions.Logging;
 using Uno.Extensions;
-using Uno.Material;
 using Uno.Foundation;
+using Uno.Material;
 
 namespace MusicPlayer
 {
@@ -17,6 +17,10 @@ namespace MusicPlayer
     /// </summary>
     sealed partial class App : Application
     {
+        public static readonly string UserAgentPostfix = "[RH Music PWA Wrapper]";
+        public static readonly string UserAgent = WebAssemblyRuntime.InvokeJS("navigator.userAgent;");
+        public static readonly bool UsePwaWrapper = UserAgent.Contains(UserAgentPostfix);
+
         /// <summary>
         ///     Initializes the singleton application object.  This is the first line of authored code
         ///     executed, and as such is the logical equivalent of main() or WinMain().
@@ -32,10 +36,6 @@ namespace MusicPlayer
                 bool.Parse(WebAssemblyRuntime.InvokeJS(
                     "window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;"));
         }
-
-        public static readonly string UserAgentPostfix = "[RH Music PWA Wrapper]";
-        public static readonly string UserAgent = WebAssemblyRuntime.InvokeJS("navigator.userAgent;");
-        public static readonly bool UsePwaWrapper = UserAgent.Contains(UserAgentPostfix);  
 
         public static bool IsDarkMode { get; private set; }
 
