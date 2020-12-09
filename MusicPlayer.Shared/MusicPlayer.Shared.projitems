@@ -61,4 +61,30 @@
     <PRIResource Include="$(MSBuildThisFileDirectory)Languages\de\Resources.resw"/>
     <PRIResource Include="$(MSBuildThisFileDirectory)Languages\en\Resources.resw"/>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\IMediaError.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\IPictureInPictureWindow.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\ITimeRanges.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\IVideoPlaybackQuality.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\MediaError.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\PictureInPictureWindow.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\TimeRanges.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\VideoPlaybackQuality.cs"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Media\CanPlayResponse.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Media\ErrorCode.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Media\NetworkState.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Media\PreloadState.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Media\ReadyState.cs"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Services\HtmlEventHandler.cs"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Components\Audio.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Components\IMediaElement.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Components\MediaElement.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Components\Video.cs"/>
+  </ItemGroup>
 </Project>
