@@ -43,7 +43,6 @@ namespace MusicPlayer.Shared.Html.Api.Components
         /// </returns>
         Task<bool> PlayAsync();
 
-
         /// <summary>
         ///     The <see cref="Pause" /> method will pause playback of the media, if the media is
         ///     already in a paused state this method will have no effect.
