@@ -208,5 +208,5 @@
 }
 
 @media only screen and (max-width: 700px) {
-    .uno-loader > div.box.error > div { display: none; }
+    .uno-loader > div.box > div { display: none; }
 }
