@@ -6,17 +6,17 @@ window.addEventListener("unhandledrejection", (event) => handleError(event));
 function handleError(event) {
     var reloadCounter = getCookie("reloadCounter");
 
+    function displayErrorAlert() {
+        var elements = document.getElementsByClassName("box");
+        for (var i = 0; i < elements.length; ++i)
+            elements[i].style.visibility = "collapse";
+
+        document.getElementById("errorbox-error").style.visibility = "visible";
+    }
+
     if (reloadCounter >= 5) {
         window.addEventListener("DOMContentLoaded", () => displayErrorAlert());
         displayErrorAlert();
-
-        function displayErrorAlert() {
-            var elements = document.getElementsByClassName("box");
-            for (var i = 0; i < elements.length; ++i)
-                elements[i].style.visibility = "collapse";
-
-            document.getElementById("errorbox-error").style.visibility = "visible";
-        }
 
         setCookie("reloadCounter", "", 0);
     } else {
