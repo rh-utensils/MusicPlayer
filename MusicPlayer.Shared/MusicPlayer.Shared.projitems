@@ -89,5 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Html\Components\SpectrumAnalyzer.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Components\ColorAnimation.cs" />
   </ItemGroup>
 </Project>
