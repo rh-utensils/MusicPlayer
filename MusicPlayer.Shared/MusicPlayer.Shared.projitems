@@ -87,4 +87,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Components\MediaElement.cs"/>
     <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Components\Video.cs"/>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Components\SpectrumAnalyzer.cs"/>
+  </ItemGroup>
 </Project>
