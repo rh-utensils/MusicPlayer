@@ -12,7 +12,7 @@ namespace MusicPlayer.Shared.Html.Api.Components
     public interface IMediaElement
     {
         // TODO: Customize Media Notifications and Handle Playlists
-        // https://developers.google.com/web/updates/2017/02/media-session
+        // * https://developers.google.com/web/updates/2017/02/media-session
 
         /// <summary>
         ///     The <see cref="IMediaElement" /> method <see cref="Load" /> resets the media element to its initial state and
@@ -63,8 +63,7 @@ namespace MusicPlayer.Shared.Html.Api.Components
         ///     The <see cref="Source" /> property sets the data of the media to embed.
         /// </summary>
         /// <value>A class which implements the <see cref="IFile" /> interface.</value>
-        // TODO: Create IFile interface
-        //IFile Source { get; set; }
+        IFile Source { get; set; }
 
         /// <summary>
         ///     The <see cref="Volume" /> property sets the volume at which the media will be played.

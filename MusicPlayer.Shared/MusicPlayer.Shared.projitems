@@ -70,6 +70,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Html\Api\PictureInPictureWindow.cs"/>
     <Compile Include="$(MSBuildThisFileDirectory)Html\Api\TimeRanges.cs"/>
     <Compile Include="$(MSBuildThisFileDirectory)Html\Api\VideoPlaybackQuality.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\IDatabaseProvider.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\IFile.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\IFolder.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\IStorageProvider.cs"/>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Media\CanPlayResponse.cs"/>
@@ -89,6 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Html\Components\SpectrumAnalyzer.cs"/>
-    <Compile Include="$(MSBuildThisFileDirectory)Html\Components\ColorAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Components\ColorAnimation.cs"/>
   </ItemGroup>
 </Project>

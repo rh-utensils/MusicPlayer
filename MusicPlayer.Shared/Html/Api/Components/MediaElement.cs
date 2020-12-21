@@ -97,8 +97,7 @@ namespace MusicPlayer.Shared.Html.Api.Components
 
         #region SourceProperty
 
-        // TODO: Create IFile interface
-        /* public static readonly DependencyProperty SourceProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty SourceProperty = DependencyProperty.Register(
             "Source",
             typeof(IFile),
             typeof(MediaElement),
@@ -116,7 +115,7 @@ namespace MusicPlayer.Shared.Html.Api.Components
             var element = dependencyobject as MediaElement;
             // TODO: Set file as Source
             //element?.SetHtmlAttribute("src", (IFile) args.NewValue);
-        } */
+        }
 
         #endregion
 
