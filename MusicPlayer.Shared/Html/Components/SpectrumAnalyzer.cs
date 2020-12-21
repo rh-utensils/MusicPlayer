@@ -114,7 +114,7 @@ namespace MusicPlayer.Shared.Html.Api.Components
             var a = brush.Color.A;
             var rgba = $"`rgba({r}, {g}, {b}, {a})`";
 
-            element.ExecuteJavascript($"element.barColor = {rgba};");;
+            element.ExecuteJavascript($"element.barColor = {rgba};");
         }
 
         #region Properties
