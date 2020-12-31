@@ -74,6 +74,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Html\Api\IFile.cs"/>
     <Compile Include="$(MSBuildThisFileDirectory)Html\Api\IFolder.cs"/>
     <Compile Include="$(MSBuildThisFileDirectory)Html\Api\IStorageProvider.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\BaseFile.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Html\Api\BaseFolder.cs"/>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Html\Api\Media\CanPlayResponse.cs"/>

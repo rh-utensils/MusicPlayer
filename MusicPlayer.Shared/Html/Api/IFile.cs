@@ -172,23 +172,23 @@ namespace MusicPlayer.Shared.Html.Api
         Task<IFolder> GetParentAsync();
 
         /// <summary>
-        ///     The <see cref="createObjectUriAsync" /> method creates a <see cref="Uri" /> representing an object.
+        ///     The <see cref="GetObjectUriAsync" /> method creates a <see cref="Uri" /> representing an object.
         ///     The URL lifetime is tied to the document in the window on which it was created.
         ///     The new object URL represents the specified <see cref="IFile" /> object.
         ///     <para/>
-        ///     To release an object URL, call <see cref="revokeObjectURL" />.
+        ///     To release an object URL, call <see cref="RevokeObjectURL" />.
         /// </summary>
         /// <returns>
         ///     A <see cref="Task" /> that represents an <see cref="Uri" /> that can be used to reference the contents of the
         ///     specified source object.
         /// </returns>
-        Task<Uri> createObjectUriAsync();
+        Task<Uri> GetObjectUriAsync();
 
         /// <summary>
-        ///     The <see cref="revokeObjectURL" /> method releases an existing object URL which was
-        ///     previously created by calling <see cref="createObjectUriAsync" />. Call this method when you've finished
+        ///     The <see cref="RevokeObjectURL" /> method releases an existing object URL which was
+        ///     previously created by calling <see cref="GetObjectUriAsync" />. Call this method when you've finished
         ///     using an object URL to let the browser know not to keep the reference to the file any longer.
         /// </summary>
-        void revokeObjectURL();
+        void RevokeObjectURL();
     }
 }
