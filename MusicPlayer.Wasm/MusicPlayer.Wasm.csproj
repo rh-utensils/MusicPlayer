@@ -25,7 +25,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1"/>
     <PackageReference Include="Uno.Material" Version="1.0.0-dev.515"/>
     <PackageReference Include="Uno.UI.WebAssembly" Version="3.0.12"/>
-    <PackageReference Include="Uno.UI.RemoteControl" Version="3.0.5" Condition="'$(Configuration)'=='Debug'"/>
+    <PackageReference Include="Uno.UI.RemoteControl" Version="3.7.3" Condition="'$(Configuration)'=='Debug'"/>
     <PackageReference Include="Uno.Wasm.Bootstrap" Version="1.3.4"/>
     <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="1.3.4"/>
   </ItemGroup>
